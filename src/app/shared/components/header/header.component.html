@@ -1,0 +1,61 @@
+<header class="header-container flex items-center sticky z-30 top-0">
+  <div class="flex max-w-screen-xl my-0 mx-auto items-center justify-between flex-1">
+    <div class="flex items-center gap-2">
+      <div class="translate-x-[-2px] mr-[-5px] text-3xl font-mono text-theme-text-secondary font-medium mb-0">{{"{"}}</div>
+      <a class="logo-anchor relative">
+        <div class="absolute top-0 left-0 -z-10  hexa-container">
+          <svg id="hex" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 84 96" class="w-[39px] h-[45px] text-theme-text-primary">
+            <title>Hexagon</title>
+            <g transform="translate(-8.000000, -2.000000)">
+              <g transform="translate(11.000000, 5.000000)">
+                <polygon stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" points="39 0 0 22 0 67 39 90 78 68 78 23" fill="currentColor"></polygon>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <div class="relative z-10">
+          <svg id="logo" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 84 96" class="w-[39px] h-[45px] text-theme-text-primary">
+            <title>Logo</title>
+            <g transform="translate(-8.000000, -2.000000)">
+              <g transform="translate(11.000000, 5.000000)">
+                <polygon id="Shape" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" points="39 0 0 22 0 67 39 90 78 68 78 23"></polygon>
+                 <text alignment-baseline="middle" x="25" y="48" fill="currentColor" class="text-[50px] font-semibold pointer-events-none">S</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </a>
+      <div class="translate-x-[-2px] text-3xl font-mono font-medium mb-0 text-theme-text-secondary">{{"}"}}</div>
+    </div>
+
+    <div class="md:block hidden">
+      <ng-container  *ngTemplateOutlet="navLinks"></ng-container>
+    </div>
+    <button class="md:hidden relative ripple" (click)="openSideNav()">
+      <img [src]="iconsPath.menu" class="image-primary-filter" />
+    </button>
+  </div>
+</header>
+
+<div #sideNav id="mySidenav"  class="sidenav z-50">
+  <div class=" p-3">
+    <ng-container  *ngTemplateOutlet="navLinks"></ng-container>
+  </div>
+</div>
+
+<ng-template #navLinks>
+  <nav class="nav-links">
+    <ol class="flex max-md:flex-col max-md:items-start max-md:gap-4 items-center justify-between p-0 m-0 list-none text-theme-text-secondary">
+      @for (item of navItems; track item) {
+        <li class="md:mx-2 my-0">
+          <a class="text-xs p-2 before:mr-[5px] before:text-right" [href]="'#'+item">{{item}}</a>
+        </li>
+      }
+      <li class="px-2 my-0 max-md:w-full">
+        <app-button [buttonClass]="'w-full md:w-[100px]'" [isOutlined]="true" [buttonType]="'primary'">
+          <span>Resume</span>
+        </app-button>
+      </li>
+    </ol>
+  </nav>
+</ng-template>

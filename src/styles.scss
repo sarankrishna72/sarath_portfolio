@@ -1,0 +1,156 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+:root {
+  --primary-color: #64ffda;
+  --secondary-color: #a8b2d1;
+  --primary-bg: #0a192f;
+  --theme-font-primary-color: #64ffda;
+  --theme-font-secondary-color: #a8b2d1;
+  --theme-font-heading-primary-color: #ccd6f6;
+  --theme-font-heading-secondary-color: #8892b0;
+  --theme-primary-hover: #112240;
+  --transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+  --navy-shadow: rgba(2,12,27,0.7);
+  --nav-height: 100px;
+  --nav-scroll-height: 70px;
+  --font-family: inter-regular;
+  --button-sm-padding: 0.5rem 1rem;
+  --button-md-padding: 0.75rem 1.25rem;
+  --button-lg-padding: 1rem 1.5rem;
+  --button-xl-padding: 1.25rem 1.75rem;
+  --button-theme-primary-bg-color: #64ffda;
+  --button-theme-primary-text-color: #a8b2d1;
+  --button-theme-secondary-bg-color: #a8b2d1;
+  --button-theme-secondary-text-color: #ffffff;
+  --default-border-radius: 4px;
+  --default-font-size: 14px;
+  --lightest-navy: #233554;
+  --font-size-xxs: 12px;
+  --font-size-xs: 13px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 21px;
+  --font-size-2xl: 23px;
+  --font-size-3xl: 30px;
+  --font-size-4xl: 40px;
+  --line-height-xxs: 18px;
+  --line-height-xs: 22px;
+  --line-height-sm: 22px;
+  --line-height-md: 23px;
+  --line-height-lg: 25px;
+  --line-height-xl: 29px;
+  --line-height-2xl: 31px;
+  --line-height-3xl: 35px;
+  --line-height-4xl: 45px;
+  --osx-window-dark-bg: #112240;
+  --osx-window-dark-border: #000000;
+  --osx-window-bg: #112240;
+  --osx-window-border: #233554;
+}
+
+@font-face {
+  font-family: inter-regular;
+  src: url("assets/fonts/Inter-Regular.ttf");
+}
+@font-face {
+  font-family: poppins-regular;
+  src: url("assets/fonts/Poppins-Regular.ttf");
+}
+
+@font-face {
+  font-family: handlee-regular;
+  src: url("assets/fonts/Handlee-Regular.ttf");
+}
+@font-face {
+  font-family: miriamlibre-regular;
+  src: url("assets/fonts/MiriamLibre-Regular.ttf");
+}
+
+
+
+html {
+  // font-family: inter-regular;
+  // font-family: cursive;
+  font-family: poppins-regular;
+  line-height: normal;
+  scroll-behavior: smooth;
+  // font-family: 'SF Mono','Fira Code','Fira Mono','Roboto Mono',monospace;
+}
+
+html,body {
+  height: 100vh;
+}
+
+.image-primary-filter {
+  filter: invert(72%) sepia(98%) saturate(242%) hue-rotate(104deg) brightness(104%) contrast(101%);
+}
+
+.underline-animation {
+
+  display: inline-block;
+  &::after {
+    content: "";
+    display: block;
+    transition: var(--transition);
+    width: 0px;
+    height: 1px;
+    position: relative;
+    bottom: -1px;
+  }
+  &:hover {
+    &::after {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+}
+
+h1,h2,h3,h4,h5,h6 {
+  line-height: normal;
+}
+
+.color-code-red {
+  color: #c5504a;
+}
+
+.color-code-yellow {
+  color: #cabf6a;
+}
+
+.color-code-blue {
+  color: #04b2de;
+}
+
+.color-code-purple {
+  color: #9951d4;
+}
+.color-code-green {
+  color: #57a249;
+}
+
+.color-code-gray {
+  color: #999;
+}
+
+
+.color-code-orange {
+  color: #ed8804;
+}
+
+.color-code-base {
+  color: #ffffffdc;
+}
+
+.animate-href {
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  transition: var(--transition);
+  &:hover {
+    transform: translateY(-3px);
+  }
+}

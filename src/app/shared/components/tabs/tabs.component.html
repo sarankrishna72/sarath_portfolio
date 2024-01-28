@@ -1,0 +1,22 @@
+<div [class]="'tabs '+position ">
+  <div class="tabs-header flex overflow-auto">
+    @for (item of tabItems(); track item) {
+      <div class="tab-label text-theme-text-secondary" (click)="selectTab(item)" [class.active]="activeTab === item">
+        @if(item.labelComponent) {
+          <ng-container *ngTemplateOutlet="item.labelComponent.labelContent"></ng-container>
+        }
+        @if(!item.labelComponent) {
+          <span>{{ item.label }}</span>
+        }
+      </div>
+    }
+  </div>
+  <div class="tabs-body px-4 py-2 flex-1">
+    <ng-container *ngIf="activeTab && activeTab.bodyComponent">
+      <ng-container *ngTemplateOutlet="activeTab.bodyComponent.bodyContent">
+      </ng-container>
+    </ng-container>
+  </div>
+</div>
+
+<!-- <ng-content></ng-content> -->

@@ -1,0 +1,9 @@
+.lst-item {
+  &::before {
+    content: "▹";
+    color: var(--theme-font-primary-color);
+    position: absolute;
+    left: 0px;
+    line-height: 12px;
+  }
+}

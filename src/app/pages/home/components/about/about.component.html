@@ -1,0 +1,32 @@
+
+<div class="flex lg:flex-row flex-col-reverse items-center lg:items-start gap-4">
+  <div class="lg:max-w-[600px]">
+    <app-section-content [colorType]="'secondary'" [classes]="'mt-4 text-justify'" [size]="'xs'">
+      I’m a passionate and self-taught Full-Stack Developer residing in Mississauga, Canada. At the age of 19,
+      I have dedicated myself to the exciting world of web development and have embarked on a journey of constant learning and growth.
+    </app-section-content>
+    <app-section-content [colorType]="'secondary'" [classes]="'mt-4 text-justify'" [size]="'xs'">
+      From a young age, I was fascinated by technology and its ability to shape the world around us.
+      This curiosity led me to explore programming and web development,
+      where I quickly discovered my knack for creating dynamic and user-friendly applications.
+    </app-section-content>
+    <app-section-content [colorType]="'secondary'" [classes]="'mt-4 text-justify'" [size]="'xs'">
+      Fast-forward to today, and I’ve had the privilege of working at a <app-link [href]="'https://fortelogic.in/'">start-up</app-link>,
+      and a huge <app-link [href]="'https://www.synechron.com/'">corporation</app-link>.
+      As a Full-Stack Developer, I possess a diverse skill set that allows me to handle both the frontend and backend aspects of web development.
+    </app-section-content>
+    <app-section-content [colorType]="'secondary'" [classes]="'mt-4 '" [size]="'xs'">
+      Here are a few technologies I’ve been working with recently:
+    </app-section-content>
+    <ul class="relative flex flex-wrap">
+      @for (skill of skillsAndTechnologies; track skill) {
+        <app-list class="grow w-[50%] max-w-[50%] sm:w-[33%] sm:max-w-[33%] text-xs">
+          {{skill}}
+        </app-list>
+      }
+    </ul>
+  </div>
+  <div>
+    <img class="max-h-80 max-sm:w-full" [src]="assetsPath.developer"/>
+  </div>
+</div>

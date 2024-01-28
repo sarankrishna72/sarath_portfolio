@@ -1,0 +1,13 @@
+.osx-bar-dots {
+  height: 30px;
+  background-color: var(--osx-window-border);
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  border-bottom: solid 1px var(--osx-window-border);
+}
+
+.osx-container {
+  background-color:  var(--osx-window-bg);
+  box-shadow: var(--navy-shadow);
+}
+

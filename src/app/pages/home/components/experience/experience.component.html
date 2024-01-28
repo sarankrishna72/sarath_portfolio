@@ -1,0 +1,35 @@
+<div class="mt-5 ">
+  <app-tabs>
+    @for (company of experiences; track company.id) {
+      <app-tab-item>
+        <app-tab-label>{{company.company_name}}</app-tab-label>
+        <app-tab-body>
+          <div>
+            <app-section-content [colorType]="''" [classes]="'!mb-2 max-sm:!mb-0'" [size]="'xl'">
+              <span class="text-theme-heading-primary max-sm:text-[12px]  max-sm:leading-5 max-sm:block">
+                {{company.position}}
+                <span class="text-theme-text-primary">{{'@'}}</span>
+                <app-link [href]="company.company_profile_url">{{company.company_name}}</app-link>
+              </span>
+            </app-section-content>
+            <app-section-content [colorType]="'secondary'" [classes]="'max-sm:!text-[10px] max-sm:!mb-2 max-sm:leading-5'"  [size]="'xxs'">
+              <div class="flex gap-2">
+                <span>{{company.start_date | date:'mediumDate'}} - {{company.end_date ? (company.end_date | date:'mediumDate') : 'present'}}</span>
+                <span>|</span>
+                <span>{{company.location}}</span>
+              </div>
+            </app-section-content>
+            <div class="ml-2">
+              @for (responsibility of company.job_responsibilities; track responsibility) {
+                <app-list classes="max-sm:text-xxs text-xs leading-6 ">
+                  {{responsibility}}
+                </app-list>
+              }
+            </div>
+          </div>
+        </app-tab-body>
+      </app-tab-item>
+    }
+  </app-tabs>
+</div>
+
