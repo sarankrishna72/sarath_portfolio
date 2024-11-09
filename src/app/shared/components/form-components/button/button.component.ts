@@ -57,6 +57,10 @@ export class ButtonComponent implements OnInit {
     }
   }
 
+  onButtonClick() {
+    this.onPress.emit(true)
+  }
+
   /**
    * Returns the button classes
    *

@@ -94,4 +94,8 @@ export class HomeComponent   {
     }
   ]
 
+  sayHello() {
+     window.location.href = "mailto:chandran.sarath.pr@gmail.com";
+  }
+
 }

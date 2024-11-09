@@ -14,7 +14,8 @@ import { IMAGE_ASSETS_PATH } from '../../../core/image.assets';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  navItems:string[] = ["About", "Experience", "Projects", "Certifications", "Contact"];
+  navItems:string[] = ["About", "Experience", "Projects", "Certifications"];
+  // , "Contact"
   iconsPath: any = IMAGE_ASSETS_PATH;
   @ViewChild("sideNav") sideNav: ElementRef<any>;
   isSideNavOpen: WritableSignal<boolean> = signal(false);
@@ -29,5 +30,13 @@ export class HeaderComponent {
 
   openSideNav() {
     this.isSideNavOpen.update(prev => !prev);
+  }
+
+  downloadResume() {
+    const path = `/assets/resume/SARATHCHANDRAN_PR_RESUME.pdf`
+    var link = document.createElement('a');
+    link.href = path;
+    link.download = `SARATHCHANDRAN_PR_FULL_STACK_DEVELOPER.pdf`;
+    link.dispatchEvent(new MouseEvent('click'));
   }
 }

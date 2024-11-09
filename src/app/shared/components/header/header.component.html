@@ -52,7 +52,7 @@
         </li>
       }
       <li class="px-2 my-0 max-md:w-full">
-        <app-button [buttonClass]="'w-full md:w-[100px]'" [isOutlined]="true" [buttonType]="'primary'">
+        <app-button [buttonClass]="'w-full md:w-[100px]'" (onPress)="downloadResume()" [isOutlined]="true" [buttonType]="'primary'">
           <span>Resume</span>
         </app-button>
       </li>
